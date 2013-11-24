@@ -12,15 +12,71 @@
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}" type="text/css">
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}" type="text/css">
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		
+		<!--Menu BootStrap  -->
+    <div class="navbar navbar-fixed-top  ">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <div class="nav-collapse">
+        <ul class="nav">
+       
+        <li><a class="brand" href="${createLink(uri: '/')}">CustHome</a></li>
+        <li><a  href="${createLink(uri: '/about')}">A propos</a></li>
+        <sec:ifAllGranted roles="ROLE_USER">
+	          <li class="dropdown">
+	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">CustHome<b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	                 <li><a href="/CustHome/piece/index">Vos pieces</a></li>
+					 <li><a href="/CustHome/ref_surface_piece/index">Customiser une surface</a></li>
+	            </ul>
+	          </li>
+          </sec:ifAllGranted>
+          <sec:ifAllGranted roles="ROLE_ADMIN">
+           <li class="dropdown">
+	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">CustHome<b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	                 <li><a href="/CustHome/piece/index">Vos pieces</a></li>
+					 <li><a href="/CustHome/ref_surface_piece/index">Customiser une surface</a></li>
+	            </ul>
+	          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                 <li><a href="/CustHome/materiau/index">Materiau</a></li>
+                 <li><a href="/CustHome/couleur/index">Couleur</a></li>
+                 <li><a href="/CustHome/surface/index">Surface</a></li>
+                 <li><a href="/CustHome/user/index">Utilisateurs</a></li>
+            </ul>
+       		</sec:ifAllGranted>
+          </li>
+           
+          
+        </ul>
+        <ul class="nav pull-right">
+	          <sec:ifLoggedIn>
+				 <li><a class="home" href="${createLink(uri: '/j_spring_security_logout')}">Logout</a></li>
+				 
+			  </sec:ifLoggedIn>
+	          <sec:ifNotLoggedIn>
+				<li><g:link controller='login' action='auth'>Login</g:link></li>
+				<li><a class="home" href="${createLink(uri: '/create')}">Creation d'un compte</a></li>
+			  </sec:ifNotLoggedIn>
+		  </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar-inner -->
+</div><!-- /.navbar -->
+</br>
+</br>
+
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />

@@ -8,6 +8,8 @@ class UrlMappings {
         }
 
         "/"(view:"/index")
+		"/about"(view:"/apropos/index")
         "500"(view:'/error')
+		"/create"(view:"/userAccount/index")
 	}
 }
