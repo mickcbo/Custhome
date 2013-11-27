@@ -11,5 +11,6 @@ class UrlMappings {
 		"/about"(view:"/apropos/index")
         "500"(view:'/error')
 		"/create"(view:"/userAccount/index")
+		"/save" (controller:'UserAccount', action:'save')
 	}
 }

@@ -45,6 +45,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
 		mavenRepo "http://repo.spring.io/milestone/"
+		//mavenRepo "http://m2repo.spockframework.org/snapshots"
 		
     }
 
@@ -52,6 +53,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
 		//compile ":twitter-bootstrap:3.0.2"
+		//test:'org.spockframework:spock-grails-support:0.7-groovy-2.0'
 		
 		
     }
@@ -81,7 +83,8 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
 		test ":code-coverage:1.2.6"
-		test ":spock:0.7"
+		test":spock:0.7"
+		//test ":spock:0.6-SNAPSHOT"
 		
 		
     }

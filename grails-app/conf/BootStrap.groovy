@@ -5,7 +5,7 @@ import custhome.Surface
 import custhome.User
 import custhome.UserRole
 class BootStrap {
-
+	def static roleUser;
       def init = { servletContext ->
     
 	  InitValueDefault()
@@ -18,7 +18,7 @@ class BootStrap {
 	
 	def InitValueDefault(){
 		def roleAdmin = new Role(authority: 'ROLE_ADMIN').save()
-		def roleUser = new Role(authority: 'ROLE_USER').save()
+		roleUser = new Role(authority: 'ROLE_USER').save()
 	
 		def userAdmin = new User(username: 'admin', password: 'admin', enabled: true)
 		userAdmin.save()

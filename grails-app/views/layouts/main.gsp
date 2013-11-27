@@ -20,7 +20,7 @@
 	<body>
 		
 		<!--Menu BootStrap  -->
-    <div class="navbar navbar-fixed-top  ">
+    <div class="navbar navbar-fixed-top  navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
 
@@ -53,9 +53,13 @@
                  <li><a href="/CustHome/couleur/index">Couleur</a></li>
                  <li><a href="/CustHome/surface/index">Surface</a></li>
                  <li><a href="/CustHome/user/index">Utilisateurs</a></li>
+                 
             </ul>
+             </li>
+             
+             
        		</sec:ifAllGranted>
-          </li>
+         
            
           
         </ul>
@@ -77,7 +81,6 @@
 </br>
 
 		<g:layoutBody/>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>

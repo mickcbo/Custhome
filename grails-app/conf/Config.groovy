@@ -124,9 +124,10 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'custhome.UserR
 grails.plugin.springsecurity.authority.className = 'custhome.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':							  ['permitAll'],
-	'/apropos/index':                 ['permitAll'],
+	'/apropos/**':                	  ['permitAll'],
 	'/about':                         ['permitAll'],
 	'/index':                         ['permitAll'],
+	'/userAccount/save': 		 	  ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
 	'/couleur/**':                    ['ROLE_ADMIN'],
 	'/materiau/**':                   ['ROLE_ADMIN'],
